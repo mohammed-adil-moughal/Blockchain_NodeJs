@@ -1,4 +1,4 @@
-const Blockchain = require('./blochchain');
+const Blockchain = require('./index');
 const Block = require('./block');
 
 describe('Blockchain',()=>{
