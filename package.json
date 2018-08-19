@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "dev-test": "nodemon dev-test",
-    "start" : "node ./app",
-    "dev":"nodemon ./app"
+    "start": "node ./app",
+    "dev": "nodemon ./app"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "nodemon": "^1.18.3"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "crypto-js": "^3.1.9-1",
     "express": "^4.16.3"
   }
