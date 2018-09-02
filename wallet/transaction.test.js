@@ -24,13 +24,26 @@ describe("Transaction", () => {
     ).toEqual(amount);
   });
 
+  it("inputs the balance of the wallet", () => {
+    expect(transaction.input.amount).toEqual(wallet.balance);
+  });
+
+  it("validates a transaction", () => {
+    expect(Transaction.verifyTransaction(transaction)).toBe(true);
+  });
+
+  it("invalidates a transaction", () => {
+    transaction.outputs[0].amount = 50000;
+    expect(Transaction.verifyTransaction(transaction)).toBe(false);
+  });
+
   describe("transactions with amount exceeds balance", () => {
     beforeEach(() => {
       amount = 50000;
       transaction = Transaction.newTransaction(wallet, recepient, amount);
     });
 
-    it('does not create the transaction',()=>{
+    it("does not create the transaction", () => {
       expect(transaction).toEqual(undefined);
     });
   });
